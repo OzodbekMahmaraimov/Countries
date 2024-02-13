@@ -20,12 +20,12 @@ const Country = () => {
         setHeight(false);
         setLoading(true);
         axios.get(`https://restcountries.com/v3.1/name/${byIdValue("searchInput")}`).then(res => {
-            console.log(res.data);
+            // console.log(res.data);
             setCountry(res.data);
             setLoading(false);
             setFound(true)
         }).catch(err => {
-            console.log(err);
+            // console.log(err);
             setLoading(false);
             setFound(false);
             setHeight(true)
@@ -86,7 +86,7 @@ const Country = () => {
                                 </div>
                                 {/* Map */}
                                 <YMaps>
-                                    <div className='col-span-1 lg:col-span-2 mt-10 '>
+                                    <div className='col-span-1 lg:col-span-2 mt-10 mb-10'>
                                         <Map className='w-[100%] h-[65vh] rounded-xl' defaultState={{
                                             center: [country[0].capitalInfo.latlng[0], country[0].capitalInfo.latlng[1]],
                                             zoom: 10,
