@@ -34,11 +34,11 @@ const Country = () => {
 
     return (
         <>
-            <section className={`bg-gradient-to-r from-[#84fab0] to-[#8fd3f4] w-full ${loading ? "h-[100vh]" : ""} ${height ? "h-[100vh]" : "h-auto"}`}>
+            <section className={`w-full ${loading ? "h-[100vh]" : ""} ${height ? "h-[100vh]" : "h-auto"}`}>
                 <h1 className='text-center text-5xl text-[#ad2e24]'>Davlatlar haqida</h1>
                 <div className='max-w-[1300px] mx-auto pt-10 flex flex-col gap-10'>
                     <div className='w-full flex justify-center lg:justify-start gap-5'>
-                        <input id='searchInput' className='py-2 w-[80%] md:w-[50%] bg-transparent outline-none border-b-2 text-[#f1a638] font-semibold text-2xl placeholder:text-white placeholder:text-lg focus:border-[#deaaff]' type="text" placeholder='ENTER COUNTRY NAME' />
+                        <input id='searchInput' className='py-2 w-[70%] md:w-[50%] bg-transparent outline-none border-b-2 text-[#f1a638] font-semibold text-2xl placeholder:text-white placeholder:text-lg focus:border-[#deaaff]' type="text" placeholder='ENTER COUNTRY NAME' />
                         <button onClick={serachCountry} className='bg-[#bb0a21] px-5 rounded-md'><IoSearch color='white' /></button>
                     </div>
                     <div className={`${loading ? "flex justify-center items-center" : "grid grid-cols-1 lg:grid-cols-2 gap-2"} w-[90%] mx-auto md:w-full`}>
@@ -48,9 +48,9 @@ const Country = () => {
                             country &&
                             <>
                                 <div className='flex flex-col gap-10'>
-                                    <h2 className='text-3xl flex justify-between items-center flex-wrap gap-8'><span className='text-[#01161e]'>State:</span> <span className='text-[#ff6700]'>{country[0].altSpellings[2]}</span></h2>
+                                    <h2 className='text-2xl md:text-3xl flex justify-between items-center flex-wrap gap-8'><span className='text-[#01161e]'>State:</span> <span className='text-[#ff6700]'>{country[0].altSpellings[2]}</span></h2>
                                     {country[0].borders && (
-                                        <h2 className='text-3xl flex justify-between items-center flex-wrap gap-8'>
+                                        <h2 className='text-2xl md:text-3xl flex justify-between items-center flex-wrap gap-8'>
                                             <span className='text-[#01161e]'>Borders:</span>
                                             <span className='text-[#ff6700]'>
                                                 {country[0].borders.map((item, idx) => (
@@ -62,11 +62,11 @@ const Country = () => {
                                             </span>
                                         </h2>
                                     )}
-                                    <h2 className='text-3xl flex justify-between items-center flex-wrap gap-8'><span className='text-[#01161e]'>Capital:</span> <span className='text-[#ff6700]'>{country[0].capital}</span></h2>
-                                    <h2 className='text-3xl flex justify-between items-center flex-wrap gap-8'><span className='text-[#01161e]'>FIFA:</span> <span className='text-[#ff6700]'>{country[0].fifa}</span></h2>
-                                    <h2 className='text-3xl flex justify-between items-center flex-wrap gap-8'><span className='text-[#01161e]'>First day of the week:</span> <span className='text-[#ff6700]' >{country[0].startOfWeek}</span></h2>
-                                    <h2 className='text-3xl flex justify-between items-center flex-wrap gap-8'><span className='text-[#01161e]'>Timezones:</span> <span className='text-[#ff6700]'>{country[0].timezones[0]}</span></h2>
-                                    <h2 className='text-3xl flex justify-between items-center flex-wrap gap-8'><span className='text-[#01161e]'>Continent:</span> <span className='text-[#ff6700]' >{country[0].continents}</span></h2>
+                                    <h2 className='text-2xl md:text-3xl flex justify-between items-center flex-wrap gap-8'><span className='text-[#01161e]'>Capital:</span> <span className='text-[#ff6700]'>{country[0].capital}</span></h2>
+                                    <h2 className='text-2xl md:text-3xl flex justify-between items-center flex-wrap gap-8'><span className='text-[#01161e]'>FIFA:</span> <span className='text-[#ff6700]'>{country[0].fifa}</span></h2>
+                                    <h2 className='text-2xl md:text-3xl flex justify-between items-center flex-wrap gap-8'><span className='text-[#01161e]'>First day of the week:</span> <span className='text-[#ff6700]' >{country[0].startOfWeek}</span></h2>
+                                    <h2 className='text-2xl md:text-3xl flex justify-between items-center flex-wrap gap-8'><span className='text-[#01161e]'>Timezones:</span> <span className='text-[#ff6700]'>{country[0].timezones[0]}</span></h2>
+                                    <h2 className='text-2xl md:text-3xl flex justify-between items-center flex-wrap gap-8'><span className='text-[#01161e]'>Continent:</span> <span className='text-[#ff6700]' >{country[0].continents}</span></h2>
                                 </div>
                                 <div className='flex flex-col items-center justify-between gap-16 md:gap-5 mt-10 md:mt-0'>
                                     {country[0].coatOfArms.png ?
