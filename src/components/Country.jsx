@@ -35,7 +35,7 @@ const Country = () => {
     return (
         <>
             <section className={`w-full ${loading ? "h-[100vh]" : ""} ${height ? "h-[100vh]" : "h-auto"}`}>
-                <h1 className='text-center text-5xl text-[#ad2e24]'>Davlatlar haqida</h1>
+                <h1 className='text-center text-3xl md:text-5xl text-[#ad2e24]'>Davlatlar haqida</h1>
                 <div className='max-w-[1300px] mx-auto pt-10 flex flex-col gap-10'>
                     <div className='w-full flex justify-center lg:justify-start gap-5'>
                         <input id='searchInput' className='py-2 w-[70%] md:w-[50%] bg-transparent outline-none border-b-2 text-[#f1a638] font-semibold text-2xl placeholder:text-white placeholder:text-lg focus:border-[#deaaff]' type="text" placeholder='ENTER COUNTRY NAME' />
