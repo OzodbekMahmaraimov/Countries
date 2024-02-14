@@ -16,20 +16,24 @@ const Country = () => {
     const [found, setFound] = useState(true);
     const [height, setHeight] = useState(true);
 
-    function serachCountry() {
+    function searchCountry() {
         setHeight(false);
         setLoading(true);
         axios.get(`https://restcountries.com/v3.1/name/${byIdValue("searchInput")}`).then(res => {
-            // console.log(res.data);
             setCountry(res.data);
             setLoading(false);
-            setFound(true)
+            setFound(true);
         }).catch(err => {
-            // console.log(err);
             setLoading(false);
             setFound(false);
-            setHeight(true)
+            setHeight(true);
         })
+    }
+
+    function handleKeyPress(event) {
+        if (event.key === 'Enter') {
+            searchCountry();
+        }
     }
 
     return (
@@ -38,8 +42,8 @@ const Country = () => {
                 <h1 className='text-center text-3xl md:text-5xl text-[#ad2e24]'>Davlatlar haqida</h1>
                 <div className='max-w-[1300px] mx-auto pt-10 flex flex-col gap-10'>
                     <div className='w-full flex justify-center lg:justify-start gap-5'>
-                        <input id='searchInput' className='py-2 w-[70%] md:w-[50%] bg-transparent outline-none border-b-2 text-[#f1a638] font-semibold text-2xl placeholder:text-white placeholder:text-lg focus:border-[#deaaff]' type="text" placeholder='ENTER COUNTRY NAME' />
-                        <button onClick={serachCountry} className='bg-[#bb0a21] px-5 rounded-md'><IoSearch color='white' /></button>
+                        <input onKeyPress={handleKeyPress} id='searchInput' className='py-2 w-[70%] md:w-[50%] bg-transparent outline-none border-b-2 text-[#f1a638] font-semibold text-2xl placeholder:text-white placeholder:text-lg focus:border-[#deaaff]' type="text" placeholder='ENTER COUNTRY NAME' />
+                        <button  id='inputDown' onClick={searchCountry} className='bg-[#bb0a21] px-5 rounded-md'><IoSearch color='white' /></button>
                     </div>
                     <div className={`${loading ? "flex justify-center items-center" : "grid grid-cols-1 lg:grid-cols-2 gap-2"} w-[90%] mx-auto md:w-full`}>
                         {loading ? (
